@@ -35,7 +35,7 @@ const CONFIG = {
      GitHub Pages không đọc được danh sách thư mục, nên có 2 cách:
        a) ghi tên file vào files: ["a.mp3", "b.mp3"]   ← nên dùng
        b) để files rỗng [] và đặt tên 1.mp3, 2.mp3 … 20.mp3 hoặc nhac.mp3 trong music/ (tự dò) */
-  music: { dir: "music/", files: ["nhac.mp4","timem.m4a","dung.m4a"] },
+  music: { dir: "music/", files: ["nhac.mp4","timem.m4a","khong.m4a"] },
   volume: 1,
 
   background: { streaks: 3, floor: true },
