@@ -1,0 +1,107 @@
+/* ==========================================================================
+   THEME.CSS  —  NƠI DUY NHẤT ĐỂ ĐỔI MÀU GIAO DIỆN (phong cách len / nỉ Coraline)
+   --------------------------------------------------------------------------
+   5 bộ màu:  pink (Pink Palace) | garden (Other World Garden) | beldam (The Beldam)
+              bobinsky (Bobinsky) | tunnel (The Tunnel)
+   1) Bộ mặc định: trong config.js sửa   theme: "pink"
+   2) Muốn màu riêng: copy cả 1 khối [data-theme="..."], đổi tên, sửa mã màu,
+      rồi thêm tên đó vào THEMES trong config.js
+   3) Người xem bấm nút 🎨 trên thanh đầu trang để đổi màu (tự nhớ).
+
+   Giải thích nhanh các biến:
+     --acc / --acc-2 / --acc-3   màu nhấn chính / bản đậm hơn / màu phối thứ hai
+     --acc-rgb / --acc-3-rgb     cùng màu nhưng viết dạng R,G,B (dùng cho vầng sáng)
+     --on-acc                    màu chữ nằm trên nền màu nhấn
+     --card-1 / --card-2         2 đầu dải màu nền của miếng nỉ (thẻ)
+     --thread                    màu chỉ khâu (đường khâu tay quanh thẻ, mảnh ghép)
+     --button / --on-btn         màu chiếc cúc áo / màu biểu tượng nằm trên cúc
+     --heart                     màu trái tim Yêu thích
+     --line / --line-2           viền thường / viền sáng
+   ========================================================================== */
+
+
+/* ---- 1. PINK PALACE — hồng kẹo × cúc xanh ngọc × chỉ vàng (mặc định) ---- */
+:root,
+:root[data-theme="pink"]{
+  --bg:#1c0f19; --bg-2:#2b1624;
+  --acc:#ff7ab8; --acc-2:#d6457f; --acc-3:#5fe0d0;
+  --tint:#ffd3e8; --on-acc:#2a0b1a;
+  --acc-rgb:255,122,184; --acc-3-rgb:95,224,208;
+  --warn:#ffd36b;
+  --card-1:#4d2943; --card-2:#2a1426;
+  --panel:rgba(36,17,31,.92);
+  --line:#6b3a5d; --line-2:#9a5a86;
+  --text:#fff0f7; --muted:#cba5bb; --silver:#f3dce8;
+  --chrome:linear-gradient(180deg,#fff6fb 0%,#ffc0dd 45%,#d6639b 55%,#ffe3f0 100%);
+  --st1:#ff6f91; --st2:#5fe0d0; --st3:#ffd36b;
+  --thread:#ffd36b; --button:#5fe0d0; --on-btn:#12312d; --heart:#ff3b6b;
+  --shade:rgba(8,0,6,.55);
+}
+
+/* ---- 2. OTHER WORLD GARDEN — xanh rêu × tím hoa phát sáng × chỉ vàng ---- */
+:root[data-theme="garden"]{
+  --bg:#0a1710; --bg-2:#112718;
+  --acc:#66e08a; --acc-2:#1f9d57; --acc-3:#c68bff;
+  --tint:#d4ffd9; --on-acc:#06180d;
+  --acc-rgb:102,224,138; --acc-3-rgb:198,139,255;
+  --warn:#ffe27a;
+  --card-1:#215036; --card-2:#102b1d;
+  --panel:rgba(10,27,17,.92);
+  --line:#2f6a48; --line-2:#4a9a6a;
+  --text:#effff3; --muted:#9fc9ad; --silver:#d9f0df;
+  --chrome:linear-gradient(180deg,#f4fff6 0%,#b6f0c4 45%,#3f9a62 55%,#e2ffe9 100%);
+  --st1:#66e08a; --st2:#c68bff; --st3:#ffe27a;
+  --thread:#ffe27a; --button:#c68bff; --on-btn:#2b1244; --heart:#ff5c8a;
+  --shade:rgba(0,10,4,.55);
+}
+
+/* ---- 3. THE BELDAM — đen đỏ máu × cúc đen × chỉ bạc ---- */
+:root[data-theme="beldam"]{
+  --bg:#0e0709; --bg-2:#1b0b10;
+  --acc:#e8323f; --acc-2:#9a1626; --acc-3:#c5c8d8;
+  --tint:#ffd0d4; --on-acc:#ffffff;
+  --acc-rgb:232,50,63; --acc-3-rgb:197,200,216;
+  --warn:#ffcf5a;
+  --card-1:#3d1721; --card-2:#1b0a0f;
+  --panel:rgba(24,9,13,.93);
+  --line:#5a2230; --line-2:#8a3447;
+  --text:#f8eef0; --muted:#bc9ca4; --silver:#ddd7db;
+  --chrome:linear-gradient(180deg,#ffffff 0%,#d9d9e4 40%,#6d6d7c 52%,#f1f1f6 100%);
+  --st1:#e8323f; --st2:#c5c8d8; --st3:#ffcf5a;
+  --thread:#d8dae8; --button:#23232d; --on-btn:#eceaf4; --heart:#ff3b4f;
+  --shade:rgba(0,0,0,.6);
+}
+
+/* ---- 4. BOBINSKY — cam xiếc × vàng × cúc xanh trời ---- */
+:root[data-theme="bobinsky"]{
+  --bg:#170e06; --bg-2:#26160a;
+  --acc:#ff9c33; --acc-2:#c65f0b; --acc-3:#4aa8ff;
+  --tint:#ffe0b8; --on-acc:#1c0d02;
+  --acc-rgb:255,156,51; --acc-3-rgb:74,168,255;
+  --warn:#fff07a;
+  --card-1:#4f2d13; --card-2:#26140a;
+  --panel:rgba(30,16,8,.92);
+  --line:#6e4220; --line-2:#a2672f;
+  --text:#fff4e8; --muted:#caa98c; --silver:#f2decb;
+  --chrome:linear-gradient(180deg,#fff8ee 0%,#ffd7a8 45%,#d27a22 55%,#ffeed9 100%);
+  --st1:#ff9c33; --st2:#4aa8ff; --st3:#fff07a;
+  --thread:#fff07a; --button:#4aa8ff; --on-btn:#07203d; --heart:#ff4d5e;
+  --shade:rgba(10,4,0,.58);
+}
+
+/* ---- 5. THE TUNNEL — chàm tím × xanh băng × cúc hồng ---- */
+:root[data-theme="tunnel"]{
+  --bg:#080b1a; --bg-2:#10143a;
+  --acc:#8f86ff; --acc-2:#5646d9; --acc-3:#4fe3ff;
+  --tint:#d4d8ff; --on-acc:#0a0820;
+  --acc-rgb:143,134,255; --acc-3-rgb:79,227,255;
+  --warn:#ffe27a;
+  --card-1:#2a2d68; --card-2:#12143a;
+  --panel:rgba(10,12,36,.92);
+  --line:#383d86; --line-2:#5961c4;
+  --text:#eef0ff; --muted:#a4a9d9; --silver:#d9dbf5;
+  --chrome:linear-gradient(180deg,#f6f7ff 0%,#c3c9ff 45%,#5b63c8 55%,#e8eaff 100%);
+  --st1:#8f86ff; --st2:#4fe3ff; --st3:#ffe27a;
+  --thread:#bfe6ff; --button:#ff7ab8; --on-btn:#3a0d24; --heart:#ff5ca0;
+  --shade:rgba(0,0,12,.6);
+}

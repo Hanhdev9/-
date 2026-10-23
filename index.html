@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="Hanh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0c11">
+<title>Hanh Dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- Màu (đổi màu ở theme.css) rồi mới tới bố cục/hiệu ứng -->
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="fx.css">
+
+<!-- Nội dung & cấu hình (sửa ở config.js) -->
+<script src="config.js"></script>
+<script>
+/* áp bộ màu ngay từ đầu để không bị nháy màu khi tải trang */
+(function(){var t;try{t=localStorage.getItem("hanh-theme")}catch(e){}
+t=t||(typeof CONFIG!=="undefined"&&CONFIG.theme)||"Hanh";document.documentElement.setAttribute("data-theme",t)})();
+</script>
+</head>
+<body>
+<div id="prog"></div>
+
+<!-- Nền động -->
+<div class="bg" aria-hidden="true">
+  <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+  <div class="dots"></div>
+  <div class="floor" id="floor"><i></i></div>
+  <div class="streaks" id="streaks"></div>
+  <div class="vig"></div>
+</div>
+
+<!-- Màn hình chào -->
+<div id="gate"><canvas id="rain"></canvas>
+  <div class="gate-card">
+    <div class="gate-ico">☭</div>
+    <div class="tiny">Cung Cấp Dịch Vụ Miễn Phí</div>
+    <h1>Welcome To <b id="g-name">Hanh Dev</b></h1>
+    <div class="badges"><span>Admim</span><i>●</i><span id="g-own">@hanhluoitap</span></div>
+    <div class="status"><span><i></i><span id="g-on">Hanh Dev</span> ONLINE</span><span>• Tình Trạng Hoạt Động</span></div>
+    <p class="d">Kho lưu trữ mod và tiện ích của <span id="g-h">Hanh</span><b id="g-tg"></b></p>
+    <button class="btn-main" id="enter"><span style="flex:none">☭</span><span>VÀO WEB NGAY</span><u data-ic="right"></u></button>
+    <div class="gate-foot"><span>Đang Lấy Dữ Liệu</span><span id="g-year"></span></div>
+  </div>
+</div>
+
+<!-- Thông báo -->
+<div id="npb"></div>
+<div id="np" role="dialog" aria-label="Thông báo"><div class="np-h"><span>THÔNG BÁO</span><button id="np-read">Đánh dấu đã đọc</button></div><div id="np-l"></div></div>
+
+<main class="wrap">
+  <div class="top">
+    <div class="pill"><span id="clock">--:--:--</span><u data-ic="moon"></u></div>
+    <div class="tools">
+      <button class="sq" id="theme" aria-label="Đổi màu giao diện"><u data-ic="palette"></u></button>
+      <button class="sq" aria-label="Thông báo" id="bell"><u data-ic="bell"></u><span class="dot" id="dot"></span></button>
+      <button class="sq" aria-label="Menu" id="menu"><u data-ic="menu"></u></button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <canvas id="sl" aria-hidden="true"></canvas>
+    <div class="ring">
+      <div class="aura"></div>
+      <div class="avatar" id="avatar">Hanh</div>
+      <canvas id="orb" aria-hidden="true"></canvas>
+    </div>
+    <div class="name"><span id="owner">hanhluoitap</span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.3l3 3 6-6.3"/></svg></div>
+    <h1 class="logo"><small>☭</small><span id="logo">Hanh Dev</span><small>☭</small></h1>
+    <div class="scan"></div>
+    <button class="cta" id="dl"><s>☭</s><u data-ic="pad"></u>Sử Dụng Dịch Vụ Ngay<u data-ic="down"></u><s>☭</s></button>
+    <div class="stats">
+      <div class="stat"><div class="ic" data-ic="eye"></div><div><b id="s1">0</b><span>LƯỢT XEM</span></div></div>
+      <div class="stat"><div class="ic" data-ic="refresh"></div><div><b id="s2">0</b><span>CẬP NHẬT</span></div><svg class="wv" viewBox="0 0 60 24"><path pathLength="1" d="M0 16C8 4 14 4 22 13S38 22 46 10 56 6 60 8"/></svg></div>
+      <div class="stat"><div class="ic" data-ic="phone"></div><div><b><i>#</i>1</b><span>IOS</span></div><svg class="wv" viewBox="0 0 60 24"><path pathLength="1" d="M0 20C8 16 12 8 20 14S34 20 42 10 54 4 60 6"/></svg></div>
+    </div>
+  </section>
+
+  <div class="tag"><u data-ic="rss"></u>MẠNG XÃ HỘI</div>
+  <div class="grid2"><a class="soc" href="#" id="l-yt" target="_blank" rel="noopener"><u data-ic="yt" style="color:#ff0000"></u>Youtube</a><a class="soc" href="#" id="l-tt" target="_blank" rel="noopener"><u data-ic="note" style="color:#25f4ee"></u>TikTok</a></div>
+  <div class="tag"><u data-ic="bell"></u>NHÓM THÔNG BÁO BẮT BUỘC VÀO</div>
+  <div class="grid2"><a class="soc" href="#" id="l-tg" target="_blank" rel="noopener"><u data-ic="send" style="color:#38bdf8"></u>Kênh Telegram</a><a class="soc" href="Chưa có Thông Tin" id="l-dc" target="_blank" rel="noopener"><u data-ic="chat" style="color:#8b9bff"></u>Kênh Discord</a></div>
+
+  <div class="quick">
+    <button class="qt" id="qf"><span class="ic" data-ic="heart"></span><span><b>YÊU THÍCH</b><small>File bạn đã lưu</small></span><u data-ic="chev"></u></button>
+    <button class="qt" id="qn"><span class="ic" data-ic="bolt"></span><span><b>MỚI</b><small>Nội dung mới cập nhật</small></span><u data-ic="chev"></u></button>
+  </div>
+  <div class="bar"><div class="chips" id="chips"></div></div>
+  <div class="flt"><div class="fh"><span><u data-ic="sliders"></u>BỘ LỌC</span><button id="reset">Đặt lại</button></div><div class="ft" id="types"></div>
+    <div class="sort"><span><u data-ic="sort"></u>SẮP XẾP</span><select id="sort" aria-label="Sắp xếp"><option value="def">Mặc định</option><option value="new">Mới nhất</option><option value="az">A đến Z</option></select></div></div>
+  <div class="bar">
+    <div class="search"><label><u data-ic="search"></u><input id="q" placeholder="Tìm file, game, mod, hướng dẫn…" aria-label="Tìm kiếm"></label><button id="qb">Tìm kiếm</button></div>
+    <p class="hint">Hỗ trợ tiếng Việt có dấu / không dấu và từ khóa gần đúng</p>
+  </div>
+  <div id="list"></div>
+</main>
+
+<!-- Chi tiết -->
+<div id="modal" role="dialog" aria-modal="true"><div class="sheet">
+  <div class="grab"></div>
+  <div class="mh"><div class="thumb" id="m-th"></div><div><h2 id="m-t"></h2><small id="m-c"></small></div><button class="x" id="m-x" aria-label="Đóng"><u data-ic="x"></u></button></div>
+  <div class="tabs"><button class="on" data-t="a">CHI TIẾT</button><button data-t="b">HD SỬ DỤNG</button></div>
+  <div id="tab-a" class="box"><h4>CHI TIẾT</h4>
+    <div class="row"><span class="i">♥</span><div><b class="hl">Thả tim:</b> để lưu file vào mục Yêu thích nếu sau cần dùng.</div></div>
+    <div class="row"><span class="i">✦</span><div id="m-d"></div></div>
+    <div class="row"><span class="i">☕</span><div>Cần hỗ trợ, hãy liên hệ Admin qua nút bên dưới.</div></div>
+    <a class="adm" id="m-adm" href="#" target="_blank" rel="noopener"><u data-ic="user"></u>ADMIN</a>
+  </div>
+  <div id="tab-b" class="box hide"><h4>HƯỚNG DẪN</h4><div id="m-s"></div></div>
+  <a class="btn-main" id="m-dl" href="#" target="_blank" rel="noopener"><span style="flex:none"><u data-ic="down"></u></span><span id="m-dt">TẢI FILE</span><u></u></a>
+</div></div>
+
+<!-- Nhạc + toast -->
+<div id="player"><span class="m"><u data-ic="note"></u></span><span class="eq"><i></i><i></i><i></i><i></i></span><button class="p" id="pb" aria-label="Phát / dừng nhạc"></button></div>
+<div id="toast" role="status"></div>
+
+<script src="fx.js"></script>
+<script src="app.js"></script>
+<script src="avatar.js"></script>
+<script src="slender.js"></script>
+</body>
+</html>
